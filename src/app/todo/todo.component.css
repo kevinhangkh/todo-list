@@ -1,0 +1,105 @@
+
+.jumbotron {
+    background-color: #ffffcc;
+    border: solid 1px lightgrey;
+}
+
+.clamp {
+    display: grid;
+    place-items: center;
+}
+
+.addbtndiv {
+    border-top: solid 1px lightgrey;
+    border-bottom: solid 1px lightgrey;
+    border-right: solid 1px lightgrey;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #fffff7;
+}
+
+.addbtn {
+    color: #5fb86e;
+    text-decoration: none;
+}
+
+.addbtn:hover {
+    color: #17b831;
+    text-decoration: none;
+}
+
+.scrollable {
+    margin-top: 5px;
+    overflow-y: scroll;
+    height: 400px;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+}
+
+.list-group {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+.list-group-item {
+    display: inline-block;
+}
+
+.list-group-hover .list-group-item:hover {
+    background-color: #ffffcc;
+}
+
+.unchecked {
+    text-decoration: none;
+    /* border-radius: 50%;
+    border: 2px #fff solid; */
+    color: #888888;
+    /* border-radius: 50%; */
+}
+.unchecked:hover {
+    /* background-color: #3fc355; */
+    color: #17b831;
+}
+
+
+.checked {
+    text-decoration: none;
+    /* border: 2px #3fc355 solid; */
+    color: #17b831;
+    /* border-radius: 50%; */
+}
+.checked:hover {
+    /* background-color: #fff; */
+    color: #bbbbbb;
+}
+
+.floatright {
+    text-decoration: none;
+    float: right;
+}
+
+a {
+    text-decoration: none;
+}
+
+.editbtn {
+    color: #6e7777;
+}
+.editbtn:hover {
+    color: #2e3131;
+}
+
+.trashbtn {
+    padding-left: 10px;
+}
+
+.lastAdded {
+    transition: background 0.5s ease;
+    background-color: rgb(229, 240, 253);
+    /* border-radius: 5px;
+    border-left: solid 2px lightblue; */
+}
+.lastAdded:hover {
+    background-color: none;
+    /* border-left: none; */
+}

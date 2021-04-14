@@ -1,0 +1,35 @@
+
+/* input.ng-valid {
+    border: 1px solid #17b831;
+} */
+
+.error {
+    font-size: small;
+    font-weight: 500;
+    color: red;
+}
+
+a {
+    font-size: 20px;
+}
+
+.enableLink {
+    pointer-events: all;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.disableLink {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+}
+
+.btnOk {
+    cursor: pointer;
+}
+
+.btnClose {
+    color: red;
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+    <div class="jumbotron">
+        <h4 class="text-center">
+            <i class="text-warning fas fa-sticky-note" style="font-size: 1em;"></i>
+            Todo List App
+        </h4>
+    </div>
+    
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Enter a note" #itemTitle>
+        <div class="input-group-addon hover-cursor addbtndiv" (click)="addTitle(itemTitle)">
+            <span class="" style="font-size: 2em; padding: 4px;">
+                <a href="#" class="fas fa-plus-circle addbtn"></a>
+            </span>
+        </div>
+    </div>
+    
+    <div class="scrollable" style="padding-top: 0.5em;">
+        <ul class="list-group list-group-hover">
+            <li class="list-group-item" *ngFor="let item of todoListArray" [ngClass]="item.$key == lastAdded ? 'lastAdded animated fadeOut' : ''">
+                <div>
+                    <span class="hover-cursor" [class.text-success]="item.isChecked">
+                        <a href="#" class="iconbtn" [ngClass]="item.isChecked?'far fa-check-circle checked':'far fa-circle unchecked'" (click)="alterCheck(item.$key, item.isChecked)"></a>
+                    </span>
+                    <span [ngClass]="item.isChecked?'text-muted':'text-dark'">
+                        {{ item.title }}
+                    </span>
+                    <span class="floatright">
+                        <a href="#" class="fas fa-edit editbtn" (click)="openEditModal(item)"></a>
+                        <a href="#" class="text-danger fas fa-trash-alt trashbtn" (click)="deleteTitle(item.$key)"></a>
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+

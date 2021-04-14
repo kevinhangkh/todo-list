@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h5 class="modal-title">Edit note</h5>
+</div>
+<div class="modal-body">
+    <h6 class="text-center">{{ fromParent.title }}</h6>
+    <form [formGroup]="editForm" action="">
+        <div class="form-group">
+            <input type="text" class="form-control" formControlName="title" placeholder="Enter a new title" #itemTitle>
+            <span class="error" *ngIf="(title.invalid && title.touched)">Please enter a valid note</span>
+        </div>
+    </form>
+</div>
+
+
+<div class="modal-footer">
+    <a type="submit" class="fas fa-check-circle btnOk" ngbAutofocus 
+    (click)="closeModal(itemTitle)" [ngClass]="title.invalid?'disableLink':'enableLink text-success'"></a>
+
+    <a type="button" class="fas fa-times-circle btnClose text-danger" data-dismiss="modal" 
+    (click)="closeModal(null)"></a>
+</div>
