@@ -1,12 +1,27 @@
 
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 80vh;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        width: 50vh;
+    }
+}
+
 .jumbotron {
     background-color: #ffffcc;
     border: solid 1px lightgrey;
 }
 
-.clamp {
-    display: grid;
-    place-items: center;
+.form {
+    display: flex;
+    flex-direction: row;
 }
 
 .addbtndiv {
@@ -16,6 +31,8 @@
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
     background-color: #fffff7;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 .addbtn {
@@ -31,7 +48,7 @@
 .scrollable {
     margin-top: 5px;
     overflow-y: scroll;
-    height: 400px;
+    height: 800px;
     border: solid 1px lightgrey;
     border-radius: 5px;
 }

@@ -1,3 +1,4 @@
+<div class="container">
     <div class="jumbotron">
         <h4 class="text-center">
             <i class="text-warning fas fa-sticky-note" style="font-size: 1em;"></i>
@@ -5,13 +6,15 @@
         </h4>
     </div>
     
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Enter a note" #itemTitle>
-        <div class="input-group-addon hover-cursor addbtndiv" (click)="addTitle(itemTitle)">
-            <span class="" style="font-size: 2em; padding: 4px;">
-                <a href="#" class="fas fa-plus-circle addbtn"></a>
-            </span>
-        </div>
+    <div class="input-container">
+        <form [formGroup]="todoForm" (ngSubmit)="addTitle(todoForm)" class="form">
+            <input type="text" class="form-control" formControlName="item" placeholder="Enter a note">
+            <div class="input-group-addon hover-cursor addbtndiv" (click)="addTitle(todoForm)">
+                <span class="" style="font-size: 2em;">
+                    <a href="#" class="fas fa-plus-circle addbtn"></a>
+                </span>
+            </div>
+        </form>
     </div>
     
     <div class="scrollable" style="padding-top: 0.5em;">
@@ -32,5 +35,4 @@
             </li>
         </ul>
     </div>
-    
-
+</div>

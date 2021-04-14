@@ -2,6 +2,7 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 import { TodoService } from '../shared/todo.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditModalComponent } from '../modals/edit-modal/edit-modal.component';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-todo',
@@ -10,6 +11,10 @@ import { EditModalComponent } from '../modals/edit-modal/edit-modal.component';
   providers: [TodoService]
 })
 export class TodoComponent implements OnInit {
+
+  todoForm = new FormGroup({
+    item: new FormControl(null, Validators.required)
+  });
 
   todoListArray: any[];
   lastAdded: string = ""; //key of the last added/edited element
@@ -39,14 +44,20 @@ export class TodoComponent implements OnInit {
     
   }
 
-  addTitle(itemTitle: any) {
-    if (itemTitle.value == "") return;
-    let item = this.todoService.addTitle(itemTitle.value);
-    itemTitle.value = null;
+  addTitle(form: FormGroup) {
+    // console.log(form.get('item').value);
+    let item = form.get('item').value;
+    
+    if (item == "" || /^\s*$/.test(item)) {
+      form.reset();
+      return;
+    }
+    item = this.todoService.addTitle(item);
 
     console.log("LAST " + item);
     this.lastAdded = item;
     this.scroll();
+    form.reset();
   }
 
   alterCheck($key: string, isChecked: boolean) {
